@@ -55,10 +55,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Testing\UnitTests.cs" />
     <Page Include="Presentation Layer\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Business Layer\Email.cs" />
+    <Compile Include="Business Layer\Enums.cs" />
+    <Compile Include="Business Layer\MessageResponseType.cs" />
+    <Compile Include="Business Layer\SMS.cs" />
+    <Compile Include="Business Layer\Tweet.cs" />
     <Compile Include="Presentation Layer\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -96,9 +102,7 @@
     <None Include="Presentation Layer\App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Business Layer\" />
     <Folder Include="Data Layer\" />
-    <Folder Include="Testing\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
