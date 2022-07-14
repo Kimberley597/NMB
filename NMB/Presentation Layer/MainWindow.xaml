@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <ComboBox x:Name="cmbMessageType" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblSender" Content="Sender" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtboxSender" HorizontalAlignment="Left" Height="22" Margin="10,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="774"/>
+        <Label x:Name="lblSubjectHeader" Content="Subject" HorizontalAlignment="Left" Margin="7,90,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtboxSubject" HorizontalAlignment="Left" Height="26" Margin="10,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="774"/>
+        <Label x:Name="lblMessageBody" Content="Message" HorizontalAlignment="Left" Margin="10,147,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtboxMessageBody" HorizontalAlignment="Left" Height="105" Margin="10,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="774"/>
+        <Button x:Name="btnSend" Content="Send" HorizontalAlignment="Left" Margin="709,300,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="lblMessageString" Content="MessageResult" HorizontalAlignment="Left" Margin="10,301,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtboxMessageString" HorizontalAlignment="Left" Height="20" Margin="10,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="774"/>
+
     </Grid>
 </Window>
