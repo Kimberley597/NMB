@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace NMB.Business_Layer
 {
-    class Enums
+    //List of enums for message type
+    public enum MessageType
     {
+        Email,
+        Text,
+        Tweet
     }
 }
