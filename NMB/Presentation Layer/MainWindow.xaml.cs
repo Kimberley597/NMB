@@ -33,7 +33,7 @@ namespace NMB
         }
 
         //Event handler for selection of message type
-        private void ComboBox_SelectedChanged(object sender, SelectionChangedEventHandler e)
+        private void cmbMessageType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ComboBoxItem choice = (ComboBoxItem)cmbMessageType.SelectedItem;
 
@@ -52,7 +52,7 @@ namespace NMB
         }
 
         //Decide which message type has ben entered, create a string with the info
-        private void btnSend_Click(object sender, RoutedEventArgs e)
+        private void btnSend_Click_1(object sender, RoutedEventArgs e)
         {
             //declare and intialise result vairable
             string result = "";
@@ -132,6 +132,9 @@ namespace NMB
                     break;
 
             }
+
+            //paste result string into text box
+            txtboxMessageString.Text = result;
         }
     }
 }
