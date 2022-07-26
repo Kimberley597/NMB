@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using NMB.Business_Layer;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace NMB
 {
@@ -25,6 +26,9 @@ namespace NMB
         //declare default value
         MessageType messageType = MessageType.Email;
 
+        //Declare Dictionary for text speak of type string, string
+        Dictionary<string, string> TextSpeakDict = new Dictionary<string, string>();
+
         //declare variables
         int maxSubjectLength = 20;
         int maxTwitterIdLength = 15;
@@ -34,6 +38,28 @@ namespace NMB
             InitializeComponent();
 
             cmbMessageType.SelectedIndex = 0;
+
+            //Create a string array called lines, take in the text speak file and split it by adding a new line after each entry
+            string[] lines = Properties.Resources.textwords.Split(
+                new string[] { Environment.NewLine },
+                StringSplitOptions.None);
+
+            //foreach line in lines, split at comma
+            foreach (string line in lines)
+            {
+                string[] split = line.Split(',');
+
+                if (split.Count() < 2)
+                {
+                    continue;
+                }
+
+                //If the line isn't already stroed, add it
+                if (!TextSpeakDict.ContainsKey(split[0].ToUpper()))
+                {
+                    TextSpeakDict.Add(split[0].ToUpper(), split[1]);
+                }
+            }
         }
 
         //Event handler for selection of message type
@@ -121,6 +147,11 @@ namespace NMB
 
                     //Add Message Body info
                     result += txtboxMessageBody.Text + ";";
+
+                    //
+                    MessageResponseType SMSResponse = new SMS(result, TextSpeakDict);
+                    SMSResponse.ProcessMessage();
+
                     break;
 
                 case MessageType.Tweet:
@@ -142,6 +173,11 @@ namespace NMB
 
                     //Add Message Body info
                     result += txtboxMessageBody.Text + ";";
+
+                    //
+                    MessageResponseType TweetResponse = new Tweet(result, TextSpeakDict);
+                    TweetResponse.ProcessMessage();
+
                     break;
 
             }
