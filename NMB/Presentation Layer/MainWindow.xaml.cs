@@ -25,6 +25,10 @@ namespace NMB
         //declare default value
         MessageType messageType = MessageType.Email;
 
+        //declare variables
+        int maxSubjectLength = 20;
+        int maxTwitterIdLength = 15;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -83,7 +87,16 @@ namespace NMB
                     }
 
                     //Add Subject info
-                    result += txtboxSubject.Text + "-";
+                    if (txtboxSubject.Text.Length <= maxSubjectLength)
+                    {
+                        result += txtboxSubject.Text + "-";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Email Subject length is too long.");
+                        return;
+                    }
+
                     //Add Message Body info
                     result += txtboxMessageBody.Text;
                     break;
@@ -116,8 +129,8 @@ namespace NMB
 
                     string tweet = txtboxSender.Text + "-";
 
-                    //Validate by checking starts with an @ symbol
-                    if (txtboxSender.Text.Substring(0, 1) == "@")
+                    //Validate by checking starts with an @ symbol and less than max length
+                    if (txtboxSender.Text.Substring(0, 1) == "@" && txtboxSender.Text.Length <= maxTwitterIdLength)
                     {
                         result += tweet + "-";
                     }
