@@ -30,12 +30,13 @@ namespace NMB.Business_Layer
         }
 
         //constructor
-        public MessageResponseType(string rawMessage)
+        public MessageResponseType(string rawMsg)
         {
             //declare
-            this.rawMessage = rawMessage;
+            this.rawMessage = rawMsg;
         }
 
+        //virtual means function can be overitten in our classes inheriting from 
         public virtual List<string> ProcessMessage()
         {
             return null;

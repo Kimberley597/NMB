@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Business Layer\Utility.cs" />
     <Compile Include="Testing\UnitTests.cs" />
     <Page Include="Presentation Layer\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
