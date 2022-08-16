@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Newtonsoft.Json;
 namespace NMB.Business_Layer
 {
     public class MessageResponseType
@@ -44,7 +44,17 @@ namespace NMB.Business_Layer
 
         public virtual string Serialise()
         {
+
             return null;
-        }
+            //MessageResponseType thingy = this;
+            //try
+            //{
+            //    return "";
+            //}
+            //catch(Exception e)
+            //{
+            //    return e.Message;
+            //}  
+        } 
     }
 }

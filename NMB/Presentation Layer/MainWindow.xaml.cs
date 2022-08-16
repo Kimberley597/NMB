@@ -134,14 +134,25 @@ namespace NMB
                     //Create string for the phone number
                     string text = txtboxSender.Text;
 
-                    //Validate using regex
-                    if (Regex.IsMatch(txtboxSender.Text, @"^((\+44\s?\d{4}|\(?\d{5}\)?)\s?\d{6})|((\+44\s?|0)7\d{3}\s?\d{6})$"))
+                    ////Validate using regex for UK phone number
+                    //if (Regex.IsMatch(txtboxSender.Text, @"^((\+44\s?\d{4}|\(?\d{5}\)?)\s?\d{6})|((\+44\s?|0)7\d{3}\s?\d{6})$"))
+                    //{
+                    //    result += text + "-";
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("Phone number is not a valid UK phone number");
+                    //    return;
+                    //}
+
+                    //Validate using regex for international number
+                    if (Regex.IsMatch(txtboxSender.Text, @"^([\+]?33[-]?|[0])?[1-9][0-9]{8}$"))
                     {
                         result += text + "-";
                     }
                     else
                     {
-                        MessageBox.Show("Phone number is not a valid UK phone number");
+                        MessageBox.Show("Phone number is not a valid international number.");
                         return;
                     }
 
@@ -151,6 +162,8 @@ namespace NMB
                     //
                     MessageResponseType SMSResponse = new SMS(result, TextSpeakDict);
                     SMSResponse.ProcessMessage();
+                    SMSResponse.Serialise();
+                    //clearData();
 
                     break;
 
@@ -158,7 +171,7 @@ namespace NMB
                     //If message type is tweet, add T at the start
                     result += "T" + messageId + "-";
 
-                    string tweet = txtboxSender.Text + "-";
+                    string tweet = txtboxSender.Text;
 
                     //Validate by checking starts with an @ symbol and less than max length
                     if (txtboxSender.Text.Substring(0, 1) == "@" && txtboxSender.Text.Length <= maxTwitterIdLength)
@@ -177,13 +190,25 @@ namespace NMB
                     //
                     MessageResponseType TweetResponse = new Tweet(result, TextSpeakDict);
                     TweetResponse.ProcessMessage();
+                    TweetResponse.Serialise();
 
                     break;
 
             }
 
-            //paste result string into text box
-            txtboxMessageString.Text = result;
+            //For testing purposes - paste result string into text box
+            //txtboxMessageString.Text = result;
+
+            //clear entered data, ready for a new message
+            clearData();
+
+        }
+        private void clearData()
+        {
+            txtboxSender.Clear();
+            txtboxSubject.Clear();
+            txtboxMessageBody.Clear();
+            //txtboxMessageString.Clear();
         }
     }
 }
