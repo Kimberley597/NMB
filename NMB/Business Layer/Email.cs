@@ -8,5 +8,6 @@ namespace NMB.Business_Layer
 {
     class Email
     {
+
     }
 }

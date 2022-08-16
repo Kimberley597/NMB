@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.IO;
 
 namespace NMB.Business_Layer
 {
@@ -56,8 +59,36 @@ namespace NMB.Business_Layer
             return null;
         }
 
-        public virtual string Serialise()
+        public override string Serialise()
         {
+
+            //store the processMessage as variable
+            string message = processedMessage;
+
+            //turn the processedMessage string into an array so the data can be split
+            string[] messageList = message.Split('-');
+
+            //assign varibales to the data from the array
+            string ID = messageList[0];
+            string twitterID = messageList[1];
+            string messageBody = messageList[2];
+
+            //create object 
+            var data = new
+            {
+                ID,
+                twitterID,
+                messageBody,
+            };
+
+            //transform to json object
+            string jsonData = JsonConvert.SerializeObject(data);
+
+            //filepath
+            string path = @"C:\Users\User\source\repos\NMB\NMB\JSON Output\Tweet\" + ID + ".json";
+
+            File.WriteAllText(path, JsonConvert.SerializeObject(data, Formatting.Indented) + Environment.NewLine);
+
             return null;
         }
 

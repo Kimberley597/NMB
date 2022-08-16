@@ -19,8 +19,6 @@
         <Label x:Name="lblMessageBody" Content="Message" HorizontalAlignment="Left" Margin="10,147,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtboxMessageBody" HorizontalAlignment="Left" Height="52" Margin="10,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="774"/>
         <Button x:Name="btnSend" Content="Send" HorizontalAlignment="Left" Margin="709,235,0,0" VerticalAlignment="Top" Width="75" Click="btnSend_Click_1"/>
-        <Label x:Name="lblMessageString" Content="MessageResult" HorizontalAlignment="Left" Margin="10,249,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtboxMessageString" HorizontalAlignment="Left" Height="20" Margin="10,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="774"/>
         <ListBox x:Name="listboxSIR" HorizontalAlignment="Left" Height="317" Margin="10,367,0,0" VerticalAlignment="Top" Width="222"/>
         <ListBox x:Name="listboxTrendingList" HorizontalAlignment="Left" Height="317" Margin="284,367,0,0" VerticalAlignment="Top" Width="231"/>
         <ListBox x:Name="listboxMentions" HorizontalAlignment="Left" Height="317" Margin="563,367,0,0" VerticalAlignment="Top" Width="221"/>
