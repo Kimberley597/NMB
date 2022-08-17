@@ -125,6 +125,12 @@ namespace NMB
 
                     //Add Message Body info
                     result += txtboxMessageBody.Text;
+
+                    
+                    MessageResponseType EmailResponse = new Email(result);
+                    EmailResponse.ProcessMessage();
+                    EmailResponse.Serialise();
+
                     break;
 
                 case MessageType.Text:
