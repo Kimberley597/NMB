@@ -46,15 +46,7 @@ namespace NMB.Business_Layer
         {
 
             return null;
-            //MessageResponseType thingy = this;
-            //try
-            //{
-            //    return "";
-            //}
-            //catch(Exception e)
-            //{
-            //    return e.Message;
-            //}  
+ 
         } 
     }
 }
