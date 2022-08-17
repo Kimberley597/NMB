@@ -60,6 +60,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Business Layer\Utility.cs" />
+    <Compile Include="Data Layer\InputFile.cs" />
     <Compile Include="Testing\UnitTests.cs" />
     <Page Include="Presentation Layer\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -97,6 +98,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -107,8 +109,6 @@
   <ItemGroup>
     <None Include="Presentation Layer\App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data Layer\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
