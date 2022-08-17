@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Presentation Layer">
+    <Position X="0.847" Y="0.5" Height="0.366" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Business Layer">
+    <Position X="7.166" Y="0.5" Height="0.291" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Data Layer">
+    <Position X="13.496" Y="0.5" Height="0.349" Width="1.7" />
+  </Comment>
+  <Class Name="NMB.Business_Layer.Email">
+    <Position X="4.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business Layer\Email.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NMB.Business_Layer.MessageResponseType">
+    <Position X="5.25" Y="1.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAEAAAAAAAAIAAAAAEEAAACAAAAAAAAAA=</HashCode>
+      <FileName>Business Layer\MessageResponseType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NMB.Business_Layer.SMS">
+    <Position X="8" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAIAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business Layer\SMS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NMB.Business_Layer.Tweet">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAIAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business Layer\Tweet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NMB.Business_Layer.Utility">
+    <Position X="10.25" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Business Layer\Utility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NMB.Data_Layer.InputFile">
+    <Position X="13.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data Layer\InputFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NMB.App">
+    <Position X="0.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Presentation Layer\App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NMB.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="0.75" Y="1.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAEEQAAAAAAAAAAgAAAAABAAAAAAACAAAA=</HashCode>
+      <FileName>Presentation Layer\MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NMB.Properties.Resources">
+    <Position X="9" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAQAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NMB.Properties.Settings">
+    <Position X="11" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="NMB.Business_Layer.MessageType">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAQAAAAACAAAAAA=</HashCode>
+      <FileName>Business Layer\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
