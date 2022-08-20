@@ -17,6 +17,8 @@ namespace NMB.Business_Layer
         Dictionary<string, string> TextSpeechDict;
 
         //constructor
+        //Takes in the raw message, the textspeak dictionary and a maximum length for the message body
+        //If the message body is longer than maxLength, it trims it then outputs the trimmed message
         public SMS(string rawMSG, Dictionary<string, string> textSpeechDict, int maxLength = 140) : base(rawMSG)
         {
             //declare variables
@@ -33,7 +35,7 @@ namespace NMB.Business_Layer
         }
 
         //overiding function
-        //Here we take in the string and look for any text speak, if found, add in expanded meaning
+        //Here we take in the messsage and look for any text speak, if found, add in expanded meaning
         public override List<string> ProcessMessage()
         {
             //change message to upper case
@@ -56,17 +58,10 @@ namespace NMB.Business_Layer
             }
 
             processedMessage = upperCaseRawMessage;
-
-
-            //SMS sms = new SMS("S216179294 - 07399852606 - ROFL LOL TBH;", TextSpeechDict);
-
-            //string data = JsonConvert.SerializeObject(sms);
-
-           //Serialise();
-
             return null;
         }
 
+        //Method that takes in the processedMessage, turns it into an object, then outputs to a file in JSON format
         public override string Serialise()
         {
             //store the processMessage as variable
@@ -89,7 +84,7 @@ namespace NMB.Business_Layer
             };
 
             //transform to json object
-            string jsonData = JsonConvert.SerializeObject(data);
+            //string jsonData = JsonConvert.SerializeObject(data);
 
             //filepath
             string path = @"C:\Users\User\source\repos\NMB\NMB\JSON Output\SMS\"+ID+".json";
@@ -108,8 +103,6 @@ namespace NMB.Business_Layer
             //    JsonSerializer serializer = new JsonSerializer();
             //    serializer.Serialize(file, data);
             //}
-
-
 
             return null;
         }

@@ -10,12 +10,14 @@ using System.Text.RegularExpressions;
 
 namespace NMB.Business_Layer
 {
+    //Inheriting from MessageResponseType class
     public class Email : MessageResponseType
     {
+        //constructor
+        //Takes in the raw message and a maximum length for the message body
+        //If the message body is longer than maxLength, it trims it then outputs the trimmed message
         public Email(string rawMsg, int maxLength = 1028) : base(rawMsg)
         {
-            //declare variables
-
             //Find where message section starts of message string
             int messageStart = rawMessage.LastIndexOf("-") + 1;
             //Find the message section length by subtracting messageSTart from full message
@@ -40,7 +42,7 @@ namespace NMB.Business_Layer
                 //add to list
                 urlList.Add(url.ToString());
 
-                //foreach url in the url list, add a new entry tot he Quarantined URL file, then replace with placeholder 
+                //foreach url in the url list, add a new entry to the Quarantined URL file, then replace with placeholder 
                 foreach (var item in urlList)
                 {
                     //write to Quarantined URL file
@@ -56,7 +58,7 @@ namespace NMB.Business_Layer
             return null;
         }
 
-        //Serialise processed message and output json file
+        //Method that takes in the processedMessage, turns it into an object, then outputs to a file in JSON format
         public override string Serialise()
         {
 

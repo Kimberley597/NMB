@@ -54,7 +54,7 @@ namespace NMB
                     continue;
                 }
 
-                //If the line isn't already stroed, add it
+                //If the line isn't already stored, add it
                 if (!TextSpeakDict.ContainsKey(split[0].ToUpper()))
                 {
                     TextSpeakDict.Add(split[0].ToUpper(), split[1]);
@@ -66,7 +66,7 @@ namespace NMB
         private void cmbMessageType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ComboBoxItem choice = (ComboBoxItem)cmbMessageType.SelectedItem;
-
+            //switch statement to assign the message type by what has been entered into the cmbMessageType box
             switch (choice.Content)
             {
                 case "Email":
@@ -81,7 +81,7 @@ namespace NMB
             }
         }
 
-        //Decide which message type has ben entered, create a string with the info
+        //Depending on which message type has ben entered, create a string with the info
         private void btnSend_Click_1(object sender, RoutedEventArgs e)
         {
             //declare and intialise result vairable
@@ -95,7 +95,7 @@ namespace NMB
             switch (messageType)
             {
                 case MessageType.Email:
-                    //If message type is email, add E at the start
+                    //If message type is email, add E at the start of ID
                     result += "E" + messageId + "-";
 
                     //Create string for the email address
@@ -134,7 +134,7 @@ namespace NMB
                     break;
 
                 case MessageType.Text:
-                    //If message type is text, add S at the start
+                    //If message type is text, add S at the start of ID
                     result += "S" + messageId + "-";
 
                     //Create string for the phone number
@@ -165,18 +165,17 @@ namespace NMB
                     //Add Message Body info
                     result += txtboxMessageBody.Text + ";";
 
-                    //
                     MessageResponseType SMSResponse = new SMS(result, TextSpeakDict);
                     SMSResponse.ProcessMessage();
                     SMSResponse.Serialise();
-                    //clearData();
 
                     break;
 
                 case MessageType.Tweet:
-                    //If message type is tweet, add T at the start
+                    //If message type is tweet, add T at the start of ID
                     result += "T" + messageId + "-";
 
+                    //create string for Twitter ID
                     string tweet = txtboxSender.Text;
 
                     //Validate by checking starts with an @ symbol and less than max length
@@ -193,7 +192,6 @@ namespace NMB
                     //Add Message Body info
                     result += txtboxMessageBody.Text + ";";
 
-                    //
                     MessageResponseType TweetResponse = new Tweet(result, TextSpeakDict);
                     TweetResponse.ProcessMessage();
                     TweetResponse.Serialise();
@@ -209,6 +207,8 @@ namespace NMB
             clearData();
 
         }
+
+        //clears any data entered into the Sender, Subject and Message Body boxes
         private void clearData()
         {
             txtboxSender.Clear();
