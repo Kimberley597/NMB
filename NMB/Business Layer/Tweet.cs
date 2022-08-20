@@ -17,6 +17,8 @@ namespace NMB.Business_Layer
         Dictionary<string, string> TextSpeechDict;
 
         //constructor
+        //Takes in the raw message, the textspeak dictionary and a maximum length for the message body
+        //If the message body is longer than maxLength, it trims it then outputs the trimmed message
         public Tweet(string rawMsg, Dictionary<string, string> textSpeechDict, int maxLength = 140) : base(rawMsg)
         {
             //declare variables
@@ -33,7 +35,7 @@ namespace NMB.Business_Layer
         }
 
         //overiding function
-        //Here we take in the string and look for any text speak, if found, add in expanded meaning
+        //Here we take in the messsage and look for any text speak, if found, add in expanded meaning
         public override List<string> ProcessMessage()
         {
             //change message to upper case
@@ -59,6 +61,7 @@ namespace NMB.Business_Layer
             return null;
         }
 
+        //Method that takes in the processedMessage, turns it into an object, then outputs to a file in JSON format
         public override string Serialise()
         {
 
@@ -82,7 +85,7 @@ namespace NMB.Business_Layer
             };
 
             //transform to json object
-            string jsonData = JsonConvert.SerializeObject(data);
+            //string jsonData = JsonConvert.SerializeObject(data);
 
             //filepath
             string path = @"C:\Users\User\source\repos\NMB\NMB\JSON Output\Tweet\" + ID + ".json";

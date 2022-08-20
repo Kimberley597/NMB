@@ -1,2 +1,1 @@
-https://stackoverflow.com/questions/8255533/how-to-add-new-line-into-txt-file
-https://makolyte.com/csharp-save-a-list-of-strings-to-a-file/
+https://www.abstractapi.com/guides/c-validate-phone-number
